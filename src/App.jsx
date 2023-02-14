@@ -1,6 +1,9 @@
-
+import { formatearFecha, formatearNumero, acortarTexto } from "./helpers/helpers";
 
 function App() {
+  let fecha = new Date();
+  let cantidad = 23459;
+  let texto = "Lorem ipsum dolor sit amet consectetur adipiscing elit, ante turpis taciti nisl vehicula sociis hendrerit, phasellus suscipit sociosqu a viverra elementum. Aliquet magna odio mauris elementum fringilla cras pulvinar, non fusce nostra mattis sapien proin ullamcorper, aptent mi nascetur bibendum primis lectus. Pharetra urna rutrum eget semper nam aenean massa lectus torquent, senectus sagittis nulla purus diam vehicula cursus accumsan varius at, nibh justo ridiculus cubilia magna netus ultricies bibendum.";
 
   const edad = 11;
   let numero = 12;
@@ -88,9 +91,17 @@ function App() {
       <ul>
         {paises.map((pais, i)=>(
           <li key={pais.dominio}>
-            {i}-{pais.nombre}(El dominio es: {pais.dominio})
+            {i}-{pais.nombre} - El dominio es: {pais.dominio}
           </li>
         ))}
+      </ul>
+
+      <hr/>
+      <h1>Helpers personalizados</h1>
+      <ul>
+        <li>Fecha: {formatearFecha(fecha)}</li>
+        <li>Cantidad: {`S/.${formatearNumero(cantidad)}`}</li>
+        <li>Texto: {acortarTexto(texto,0,100)}....</li>
       </ul>
 
 
